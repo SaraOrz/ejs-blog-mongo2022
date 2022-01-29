@@ -32,15 +32,15 @@ router.get('/edit/:id', async (req,res) =>{
 });
 
 
-// # PENDIENTE
-router.post('/edit/:id', async (req,res) =>{
 
+router.post('/edit/:id', async (req,res) =>{
+  await Post.updateOne({_id:req.params.id},req.body)
   res.redirect("/")
 });
 
-// # PENDIENTE
-router.post('/delete/:id', async (req,res) =>{
 
+router.post('/delete/:id', async (req,res) =>{
+  await Post.remove({_id:req.params.id})
   res.redirect("/")
 });
 
